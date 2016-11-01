@@ -9,7 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-import cn.easydone.componentizationlibrary.LibraryActivity;
+import com.linked.erfli.moduleb.news.NewsListActivity;
+import cn.easydone.modulea.LibraryActivity;
 
 public class MainActivity extends AppCompatActivity {
 

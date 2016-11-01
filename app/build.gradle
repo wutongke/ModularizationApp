@@ -20,11 +20,12 @@ android {
 
 dependencies {
     println isDebug.toBoolean()
-    provided fileTree(dir: project(':ModuleA').projectDir.absolutePath + '/outputs/jar/', include: 'sharedDependency.jar')
-    provided fileTree(dir: project(':ModuleB').projectDir.absolutePath + '/outputs/jar/', include: 'sharedDependency.jar')
     compile project(':Library')
     if (!isDebug.toBoolean()) {
         compile project(':ModuleA')
         compile project(':ModuleB')
+    }else{
+        provided fileTree(dir: project(':ModuleA').projectDir.absolutePath + '/outputs/jar/', include: 'sharedDependency.jar')
+        provided fileTree(dir: project(':ModuleB').projectDir.absolutePath + '/outputs/jar/', include: 'sharedDependency.jar')
     }
 }

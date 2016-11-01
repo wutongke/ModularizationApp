@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="cn.easydone.componentizationlibrary">
+    package="cn.easydone.modulea">
 
     <application
         android:allowBackup="true"
@@ -9,6 +9,9 @@
         <activity
             android:name="cn.easydone.modulea.LibraryActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="cn.easydone.modulea.book.BookDetailActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

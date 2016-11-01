@@ -1,12 +1,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.easydone.modulea">
 
-    <application
+    <applicationc
         android:allowBackup="true"
         android:supportsRtl="true">
 
         <activity
-            android:name="cn.easydone.modulea.LibraryActivity"
+            android:name=".LibraryActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -15,8 +15,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="cn.easydone.modulea.book.BookDetailActivity"
+            android:name=".book.BookDetailActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-    </application>
+    </applicationc>
 
 </manifest>
