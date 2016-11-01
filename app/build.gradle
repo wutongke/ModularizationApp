@@ -21,10 +21,10 @@ android {
 dependencies {
     println isDebug.toBoolean()
     provided fileTree(dir: project(':ModuleA').projectDir.absolutePath + '/outputs/jar/', include: 'sharedDependency.jar')
+    provided fileTree(dir: project(':ModuleB').projectDir.absolutePath + '/outputs/jar/', include: 'sharedDependency.jar')
+    compile project(':Library')
     if (!isDebug.toBoolean()) {
-        compile project(':componentizationlibrary')
-    } else {
-        compile 'com.android.support:appcompat-v7:24.2.1'
-        compile 'com.android.support:design:24.2.1'
+        compile project(':ModuleA')
+        compile project(':ModuleB')
     }
 }

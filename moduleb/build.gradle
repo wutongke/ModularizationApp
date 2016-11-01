@@ -1,4 +1,10 @@
-apply plugin: 'com.android.library'
+import com.android.build.gradle.api.ApkVariant
+
+if (isDebug.toBoolean()) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
 
 android {
     compileSdkVersion 24
@@ -9,7 +15,6 @@ android {
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
@@ -23,9 +28,18 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    testCompile 'junit:junit:4.12'
+    compile project(':Library')
+}
+
+if (isDebug.toBoolean()) {
+    android.applicationVariants.all { ApkVariant variant ->
+        def buildTypeName = variant.buildType.name
+        def task = project.tasks.create "jar${buildTypeName.capitalize()}", Jar
+        task.archiveName = 'sharedDependency.jar'
+        task.dependsOn variant.javaCompiler
+        task.outputs.upToDateWhen { false }
+        task.from variant.javaCompiler.destinationDir
+        task.destinationDir = file(projectDir.absolutePath + "/outputs/jar")
+        artifacts.add('archives', task)
+    }
 }

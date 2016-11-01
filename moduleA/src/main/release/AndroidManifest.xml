@@ -7,7 +7,7 @@
         android:supportsRtl="true">
 
         <activity
-            android:name=".LibraryActivity"
+            android:name="cn.easydone.modulea.LibraryActivity"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
