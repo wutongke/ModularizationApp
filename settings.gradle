@@ -1,1 +1,1 @@
-include ':app', ':componentizationlibrary'
+include ':App', ':ModuleA', ':ModuleB', ':Library'

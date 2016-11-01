@@ -20,7 +20,7 @@ android {
 
 dependencies {
     println isDebug.toBoolean()
-    provided fileTree(dir: project(':componentizationlibrary').projectDir.absolutePath + '/outputs/jar/', include: 'sharedDependency.jar')
+    provided fileTree(dir: project(':ModuleA').projectDir.absolutePath + '/outputs/jar/', include: 'sharedDependency.jar')
     if (!isDebug.toBoolean()) {
         compile project(':componentizationlibrary')
     } else {
