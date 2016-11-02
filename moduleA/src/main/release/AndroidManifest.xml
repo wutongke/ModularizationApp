@@ -8,10 +8,10 @@
 
         <activity
             android:name="cn.easydone.modulea.LibraryActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/module1_AppTheme.NoActionBar" />
         <activity
             android:name="cn.easydone.modulea.book.BookDetailActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/module1_AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

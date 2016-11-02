@@ -19,8 +19,8 @@ android {
 }
 
 dependencies {
-    println isDebug.toBoolean()
-    if (!isDebug.toBoolean()) {
+    println IsBuildMudle.toBoolean()
+    if (!IsBuildMudle.toBoolean()) {
         compile project(':ModuleA')
         compile project(':ModuleB')
     } else {

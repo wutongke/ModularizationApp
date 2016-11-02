@@ -5,7 +5,7 @@
     android:layout_height="80dp"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
-    android:background="@drawable/news_item"
+    android:background="@drawable/module2_news_item"
     android:clickable="true"
     android:gravity="center_vertical"
     android:orientation="horizontal">

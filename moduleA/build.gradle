@@ -1,7 +1,7 @@
 import com.android.build.gradle.api.ApkVariant
 
-println isDebug.toBoolean()
-if (isDebug.toBoolean()) {
+println IsBuildMudle.toBoolean()
+if (IsBuildMudle.toBoolean()) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
@@ -25,13 +25,14 @@ android {
     }
     sourceSets {
         main {
-            if (isDebug.toBoolean()) {
+            if (IsBuildMudle.toBoolean()) {
                 manifest.srcFile 'src/main/debug/AndroidManifest.xml'
             } else {
                 manifest.srcFile 'src/main/release/AndroidManifest.xml'
             }
         }
     }
+    resourcePrefix "module1_"
 }
 
 dependencies {
