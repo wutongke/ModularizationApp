@@ -1,6 +1,6 @@
 package com.linked.erfli.moduleb.news;
 
-import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -11,6 +11,9 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
+import com.github.mzule.activityrouter.annotation.Router;
+import com.github.mzule.activityrouter.router.Routers;
+import com.linked.erfli.library.utils.Utils;
 import com.linked.erfli.library.utils.operators.AppObservable;
 import com.linked.erfli.library.widget.DividerOffsetDecoration;
 import com.linked.erfli.library.widget.PullToRefreshLayout;
@@ -25,6 +28,7 @@ import java.util.List;
 
 import rx.functions.Action1;
 
+@Router("news_list")
 public class NewsListActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
@@ -86,9 +90,11 @@ public class NewsListActivity extends AppCompatActivity {
         mRecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(this, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Intent intent = new Intent(NewsListActivity.this, NewsDetailActivity.class);
-                intent.putExtra(NewsDetailActivity.NEWS, mAdapter.getItem(position));
-                startActivity(intent);
+//                Intent intent = new Intent(NewsListActivity.this, NewsDetailActivity.class);
+//                intent.putExtra(NewsDetailActivity.NEWS, mAdapter.getItem(position));
+//                startActivity(intent);
+                Story story = mAdapter.getItem(position);
+                Routers.open(NewsListActivity.this, "modularization://news_detail/" + story.getId() + "/" + Utils.encodeUrlParam(story.getTitle()));
             }
         }));
         getLatestData();

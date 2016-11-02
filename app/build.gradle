@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'android-apt'
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.1"
@@ -20,12 +20,12 @@ android {
 
 dependencies {
     println isDebug.toBoolean()
-    compile project(':Library')
     if (!isDebug.toBoolean()) {
         compile project(':ModuleA')
         compile project(':ModuleB')
-    }else{
-        provided fileTree(dir: project(':ModuleA').projectDir.absolutePath + '/outputs/jar/', include: 'sharedDependency.jar')
-        provided fileTree(dir: project(':ModuleB').projectDir.absolutePath + '/outputs/jar/', include: 'sharedDependency.jar')
+    } else {
+        compile project(':Library')
     }
+    //router
+    apt 'com.github.mzule.activityrouter:compiler:1.1.6'
 }

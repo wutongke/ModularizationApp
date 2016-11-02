@@ -9,6 +9,7 @@ import android.webkit.WebView;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.github.mzule.activityrouter.annotation.Router;
 import com.linked.erfli.library.utils.BaseActivity;
 import com.linked.erfli.library.utils.Utils;
 import com.linked.erfli.library.utils.operators.AppObservable;
@@ -17,13 +18,12 @@ import com.linked.erfli.moduleb.utils.ZhihuApiHttp;
 
 import rx.functions.Action1;
 
+@Router("news_detail/:id/:title")
 public class NewsDetailActivity extends BaseActivity {
     private WebView webView;
     private ImageView titleImageView;
     private CollapsingToolbarLayout collapsingToolbarLayout;
     private Toolbar toolbar;
-    private Story story;
-    public static final String NEWS = "news_key";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,9 +48,8 @@ public class NewsDetailActivity extends BaseActivity {
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webSettings.setDomStorageEnabled(true);
-        story = getIntent().getParcelableExtra(NEWS);
-        collapsingToolbarLayout.setTitle(story.getTitle());
-        AppObservable.bindActivity(this, ZhihuApiHttp.http.getNewsDetail(String.valueOf(story.getId()))).subscribe(new Action1<NewsDetailResponse>() {
+        collapsingToolbarLayout.setTitle(Utils.decodeUrlParam(getIntent().getStringExtra("title")));
+        AppObservable.bindActivity(this, ZhihuApiHttp.http.getNewsDetail(getIntent().getStringExtra("id"))).subscribe(new Action1<NewsDetailResponse>() {
             @Override
             public void call(final NewsDetailResponse value) {
                 collapsingToolbarLayout.setTitle(value.getTitle());

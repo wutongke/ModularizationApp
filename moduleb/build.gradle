@@ -5,7 +5,7 @@ if (isDebug.toBoolean()) {
 } else {
     apply plugin: 'com.android.library'
 }
-
+apply plugin: 'android-apt'
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.3"
@@ -24,22 +24,20 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main {
+            if (isDebug.toBoolean()) {
+                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/release/AndroidManifest.xml'
+            }
+        }
+    }
 }
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':Library')
-}
-
-if (isDebug.toBoolean()) {
-    android.applicationVariants.all { ApkVariant variant ->
-        def buildTypeName = variant.buildType.name
-        def task = project.tasks.create "jar${buildTypeName.capitalize()}", Jar
-        task.archiveName = 'sharedDependency.jar'
-        task.dependsOn variant.javaCompiler
-        task.outputs.upToDateWhen { false }
-        task.from variant.javaCompiler.destinationDir
-        task.destinationDir = file(projectDir.absolutePath + "/outputs/jar")
-        artifacts.add('archives', task)
-    }
+    //router
+    apt 'com.github.mzule.activityrouter:compiler:1.1.6'
 }

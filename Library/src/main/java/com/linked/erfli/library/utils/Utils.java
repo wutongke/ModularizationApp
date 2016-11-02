@@ -18,4 +18,12 @@ public class Utils {
         }
         toast.show();
     }
+
+    public static String encodeUrlParam(String param){
+        return param.replace("/","%%");
+    }
+
+    public static String decodeUrlParam(String param){
+        return param.replace("%%","/");
+    }
 }

@@ -1,6 +1,6 @@
 package cn.easydone.componentizationapp;
 
-import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,8 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-import com.linked.erfli.moduleb.news.NewsListActivity;
-import cn.easydone.modulea.LibraryActivity;
+import com.github.mzule.activityrouter.router.Routers;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,14 +32,13 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, LibraryActivity.class);
-                startActivity(intent);
+                Routers.open(MainActivity.this, "modularization://books_list");
             }
         });
         findViewById(R.id.buttonB).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, NewsListActivity.class));
+                Routers.open(MainActivity.this, Uri.parse("modularization://news_list"));
             }
         });
     }

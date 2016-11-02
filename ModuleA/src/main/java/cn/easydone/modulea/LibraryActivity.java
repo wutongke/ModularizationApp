@@ -5,8 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import cn.easydone.modulea.book.BooksFragment;
+import com.github.mzule.activityrouter.annotation.Router;
 
+import cn.easydone.modulea.book.BooksFragment;
+@Router("books_list")
 public class LibraryActivity extends AppCompatActivity {
 
     @Override
