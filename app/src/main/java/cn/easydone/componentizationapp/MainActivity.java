@@ -11,6 +11,8 @@ import android.widget.Button;
 
 import com.github.mzule.activityrouter.router.Routers;
 
+import hugo.weaving.DebugLog;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -31,12 +33,14 @@ public class MainActivity extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.buttonA);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
+            @DebugLog
             public void onClick(View v) {
                 Routers.open(MainActivity.this, "modularization://books_list");
             }
         });
         findViewById(R.id.buttonB).setOnClickListener(new View.OnClickListener() {
             @Override
+            @DebugLog
             public void onClick(View v) {
                 Routers.open(MainActivity.this, Uri.parse("modularization://news_list"));
             }
