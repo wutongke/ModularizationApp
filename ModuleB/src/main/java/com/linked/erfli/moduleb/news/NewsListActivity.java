@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.github.mzule.activityrouter.annotation.Router;
 import com.github.mzule.activityrouter.router.Routers;
+import com.linked.erfli.library.base.BaseActivity;
+import com.linked.erfli.library.utils.EventPool;
 import com.linked.erfli.library.utils.Utils;
 import com.linked.erfli.library.utils.operators.AppObservable;
 import com.linked.erfli.library.widget.DividerOffsetDecoration;
@@ -21,6 +23,8 @@ import com.linked.erfli.library.widget.RefreshLayout;
 import com.linked.erfli.moduleb.R;
 import com.linked.erfli.moduleb.utils.ZhihuApiHttp;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -28,7 +32,7 @@ import java.util.List;
 import rx.functions.Action1;
 
 @Router("news_list")
-public class NewsListActivity extends AppCompatActivity {
+public class NewsListActivity extends BaseActivity {
 
     private RecyclerView mRecyclerView;
     private LinearLayoutManager mLayoutManager;

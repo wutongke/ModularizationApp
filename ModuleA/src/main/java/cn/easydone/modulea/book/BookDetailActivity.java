@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.linked.erfli.library.base.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,7 @@ import cn.easydone.modulea.module.Book;
 /**
  * Created by Chenyc on 15/7/1.
  */
-public class BookDetailActivity extends AppCompatActivity {
+public class BookDetailActivity extends BaseActivity {
 
 
     private ViewPager mViewPager;

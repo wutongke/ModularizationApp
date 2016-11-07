@@ -6,10 +6,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.github.mzule.activityrouter.annotation.Router;
+import com.linked.erfli.library.base.BaseActivity;
 
 import cn.easydone.modulea.book.BooksFragment;
 @Router("books_list")
-public class LibraryActivity extends AppCompatActivity {
+public class LibraryActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.github.mzule.activityrouter.annotation.Router;
-import com.linked.erfli.library.utils.BaseActivity;
+import com.linked.erfli.library.base.BaseActivity;
 import com.linked.erfli.library.utils.Utils;
 import com.linked.erfli.library.utils.operators.AppObservable;
 import com.linked.erfli.moduleb.R;
