@@ -8,8 +8,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 
 import com.github.mzule.activityrouter.router.Routers;
+import com.linked.erfli.library.Library;
 
 import hugo.weaving.DebugLog;
 
@@ -43,6 +46,14 @@ public class MainActivity extends AppCompatActivity {
             @DebugLog
             public void onClick(View v) {
                 Routers.open(MainActivity.this, Uri.parse("modularization://news_list"));
+            }
+        });
+        Switch scalpelToggle = (Switch) findViewById(R.id.scalpel_toggle);
+        scalpelToggle.setChecked(Library.Debug);
+        scalpelToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Library.Debug = isChecked;
             }
         });
     }

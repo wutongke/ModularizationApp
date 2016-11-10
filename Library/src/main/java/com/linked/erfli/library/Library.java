@@ -7,4 +7,5 @@ import com.github.mzule.activityrouter.annotation.Module;
  */
 @Module("library")
 public class Library {
+    public static boolean Debug = false;
 }

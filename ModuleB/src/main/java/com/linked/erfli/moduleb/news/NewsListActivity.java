@@ -1,7 +1,6 @@
 package com.linked.erfli.moduleb.news;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,9 +10,11 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.github.mzule.activityrouter.annotation.Router;
+import com.github.mzule.activityrouter.router.BuildConfig;
 import com.github.mzule.activityrouter.router.Routers;
+import com.jakewharton.scalpel.ScalpelFrameLayout;
+import com.linked.erfli.library.Library;
 import com.linked.erfli.library.base.BaseActivity;
-import com.linked.erfli.library.utils.EventPool;
 import com.linked.erfli.library.utils.Utils;
 import com.linked.erfli.library.utils.operators.AppObservable;
 import com.linked.erfli.library.widget.DividerOffsetDecoration;
@@ -22,8 +23,6 @@ import com.linked.erfli.library.widget.RecyclerItemClickListener;
 import com.linked.erfli.library.widget.RefreshLayout;
 import com.linked.erfli.moduleb.R;
 import com.linked.erfli.moduleb.utils.ZhihuApiHttp;
-
-import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -45,7 +44,17 @@ public class NewsListActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.module2_activity_recycler_view);
+        if(Library.Debug){
+            View mainView = getLayoutInflater().inflate(R.layout.module2_activity_recycler_view, null);
+            ScalpelFrameLayout scalpelFrameLayout = new ScalpelFrameLayout(this);
+            scalpelFrameLayout.addView(mainView);
+            scalpelFrameLayout.setLayerInteractionEnabled(true);
+            scalpelFrameLayout.setDrawViews(true);
+            scalpelFrameLayout.setDrawIds(true);
+            setContentView(scalpelFrameLayout);
+        }else{
+            setContentView(R.layout.module2_activity_recycler_view);
+        }
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.module2_latest_news);
         setSupportActionBar(toolbar);
