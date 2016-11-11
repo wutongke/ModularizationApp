@@ -48,6 +48,12 @@ public class MainActivity extends AppCompatActivity {
                 Routers.open(MainActivity.this, Uri.parse("modularization://news_list"));
             }
         });
+        findViewById(R.id.databinding_test).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Routers.open(MainActivity.this, Uri.parse("modularization://databinding"));
+            }
+        });
         Switch scalpelToggle = (Switch) findViewById(R.id.scalpel_toggle);
         scalpelToggle.setChecked(Library.Debug);
         scalpelToggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

@@ -20,6 +20,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/jumpToModuleB" />
+    <Button
+        android:id="@+id/databinding_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/jumpDatabinding" />
     <Switch
         android:id="@+id/scalpel_toggle"
         android:layout_width="wrap_content"

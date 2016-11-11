@@ -3,5 +3,6 @@
     <string name="action_settings">Settings</string>
     <string name="jumpToModuleA">跳转到图书模块</string>
     <string name="jumpToModuleB">跳转到知乎模块</string>
+    <string name="jumpDatabinding">跳转databinding</string>
     <string name="jump_scheme">modularization</string>
 </resources>
