@@ -1,5 +1,3 @@
-import com.android.build.gradle.api.ApkVariant
-
 println IsBuildMudle.toBoolean()
 if (IsBuildMudle.toBoolean()) {
     apply plugin: 'com.android.application'
