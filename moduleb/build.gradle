@@ -3,7 +3,6 @@ if (IsBuildMudle.toBoolean()) {
 } else {
     apply plugin: 'com.android.library'
 }
-apply plugin: 'android-apt'
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.3"
@@ -26,8 +25,10 @@ android {
         main {
             if (IsBuildMudle.toBoolean()) {
                 manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+                java.srcDirs += "src/main/debug/java/";
             } else {
                 manifest.srcFile 'src/main/release/AndroidManifest.xml'
+                java.srcDirs += "src/main/release/java/";
             }
         }
     }
@@ -38,5 +39,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(':Library')
     //router
-    apt 'com.github.mzule.activityrouter:compiler:1.1.6'
+    annotationProcessor 'com.github.mzule.activityrouter:compiler:1.1.7'
 }
