@@ -7,18 +7,18 @@
 ![Paste_Image.png](http://upload-images.jianshu.io/upload_images/1407686-bb950d3382d8e90b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/540)
 ![Paste_Image.png](http://upload-images.jianshu.io/upload_images/1407686-a5924d98324b3762.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/540)
 
-###编译运行
+### 编译运行
 
 当在gradle.properties中设置IsBuildMudle=true时，可以独立运行每个module，独立运行调试。
 当设置IsBuildMudle=false，可以编译运行整个project，注意IsBuildMudle变量设置改变时，要对gradle进行sysn。
 
-###感谢
+### 感谢
 
 http://kymjs.com/code/2016/10/18/01
 https://github.com/mzule/ActivityRouter
 https://github.com/liangzhitao/ComponentizationApp
 
-###issue
+### issue
 
 关于url跳转传参数的一个问题
 
