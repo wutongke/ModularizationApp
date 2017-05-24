@@ -1,4 +1,6 @@
 # Android 组件化开发demo
+组件化开发可以有效降低代码模块的耦合度，使代码架构更加清晰，同时模块化的编译可以有效减少编译时间，当然总的编译时间是不会减少的，只是App模块化之后开发某个模块时，只需要编译特定模块，可以快速编译调试。
+
 [详情参考](http://www.jianshu.com/p/186fa07fc48a)
 
 ![Paste_Image.png](http://upload-images.jianshu.io/upload_images/1407686-2bb840fdef5d9ac2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/540)
