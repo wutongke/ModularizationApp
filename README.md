@@ -11,8 +11,11 @@
 
 ### 编译运行
 
-当在gradle.properties中设置IsBuildMudle=true时，可以独立运行每个module，独立运行调试。
+当在gradle.properties中设置IsBuildMudle=true时，可以独立运行每个module，包括app module，单独build module app时，由于没有编译moduleA和moduleB，点击两个模块时不会跳转。每个module可独立运行调试。
+
 当设置IsBuildMudle=false，可以编译运行整个project，注意IsBuildMudle变量设置改变时，要对gradle进行sysn。
+
+有什么奇怪问题，可以clean project再编译……^ - ^
 
 ### 感谢
 
