@@ -16,6 +16,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    sourceSets {
+        main {
+            if (IsBuildMudle.toBoolean()) {
+                java.srcDirs += "src/main/debug/java/";
+            } else {
+                java.srcDirs += "src/main/release/java/";
+            }
+        }
+    }
 }
 
 dependencies {
