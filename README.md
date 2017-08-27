@@ -3,11 +3,7 @@
 
 [详情参考](http://www.jianshu.com/p/186fa07fc48a)
 
-![Paste_Image.png](http://upload-images.jianshu.io/upload_images/1407686-2bb840fdef5d9ac2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/540)
-![Paste_Image.png](http://upload-images.jianshu.io/upload_images/1407686-eb097c7ce3473583.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/540)
-![Paste_Image.png](http://upload-images.jianshu.io/upload_images/1407686-74e5145beda0702e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/540)
-![Paste_Image.png](http://upload-images.jianshu.io/upload_images/1407686-bb950d3382d8e90b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/540)
-![Paste_Image.png](http://upload-images.jianshu.io/upload_images/1407686-a5924d98324b3762.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/540)
+![Paste_Image.png](http://upload-images.jianshu.io/upload_images/1407686-2bb840fdef5d9ac2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/200)![Paste_Image.png](http://upload-images.jianshu.io/upload_images/1407686-eb097c7ce3473583.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/200)![Paste_Image.png](http://upload-images.jianshu.io/upload_images/1407686-74e5145beda0702e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/200)![Paste_Image.png](http://upload-images.jianshu.io/upload_images/1407686-bb950d3382d8e90b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/200)![Paste_Image.png](http://upload-images.jianshu.io/upload_images/1407686-a5924d98324b3762.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/200)
 
 ### 编译运行
 
